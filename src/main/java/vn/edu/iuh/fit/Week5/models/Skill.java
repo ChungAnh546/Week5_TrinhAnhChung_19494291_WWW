@@ -19,5 +19,9 @@ public class Skill {
     private long id;
     @Column(name = "skill_type")
     private SkillType skill_type;
+    @Column(name = "skill_name",length = 150)
+    private String skill_name;
+    @Column(name = "skill_desc",length = 300)
+    private String skill_desc;
 
 }

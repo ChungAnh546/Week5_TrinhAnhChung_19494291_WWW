@@ -4,18 +4,27 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import vn.edu.iuh.fit.Week5.enums.SkillLevel;
+import vn.edu.iuh.fit.Week5.pks.JobSkillPK;
 
 @Entity
 @Data
 @Table(name = "job_skill")
 @AllArgsConstructor
 @NoArgsConstructor
+@IdClass(JobSkillPK.class)
 public class JobSkill {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "skill_id")
-    private long id;
+    @ManyToOne
+    @JoinColumn(name = "skill_id")
+
+    private Skill skill;
     @Id
-    @Column(name = "job_id")
-    private long job_id;
+    @ManyToOne
+    @JoinColumn(name = "job_id")
+    private Job job;
+    @Column(name = "skill_level",nullable = false)
+    private SkillLevel skillLevel;
+    @Column (name = "more_infos",length = 1000)
+    private String more_infos;
 }
