@@ -1,10 +1,12 @@
-package vn.edu.iuh.fit.Week5.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import vn.edu.iuh.fit.Week5.enums.SkillType;
+import vn.edu.iuh.fit.backend.enums.SkillType;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -23,5 +25,8 @@ public class Skill {
     private String skill_name;
     @Column(name = "skill_desc",length = 300)
     private String skill_desc;
-
+    @OneToMany(mappedBy = "skill")
+    private List<JobSkill> lsjobSkills;
+    @OneToOne
+    private CandidateSkill candidateSkill;
 }

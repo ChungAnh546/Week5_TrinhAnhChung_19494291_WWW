@@ -1,10 +1,10 @@
-package vn.edu.iuh.fit.Week5.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
+import vn.edu.iuh.fit.backend.repositories.CompanyRepository;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class Company {
     private String web_url;
 
     @OneToOne
-    private Address address;
+    private CompanyRepository.Address address;
     @OneToMany(mappedBy = "company")
     private List<Job> lJob;
 }

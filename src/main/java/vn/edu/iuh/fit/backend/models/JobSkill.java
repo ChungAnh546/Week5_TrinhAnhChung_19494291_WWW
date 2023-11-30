@@ -1,11 +1,11 @@
-package vn.edu.iuh.fit.Week5.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import vn.edu.iuh.fit.Week5.enums.SkillLevel;
-import vn.edu.iuh.fit.Week5.pks.JobSkillPK;
+import vn.edu.iuh.fit.backend.enums.SkillLevel;
+import vn.edu.iuh.fit.backend.pks.JobSkillPK;
 
 @Entity
 @Data
@@ -17,7 +17,6 @@ public class JobSkill {
     @Id
     @ManyToOne
     @JoinColumn(name = "skill_id")
-
     private Skill skill;
     @Id
     @ManyToOne

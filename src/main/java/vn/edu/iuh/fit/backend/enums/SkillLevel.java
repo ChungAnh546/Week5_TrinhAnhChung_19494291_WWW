@@ -1,6 +1,4 @@
-package vn.edu.iuh.fit.Week5.enums;
-
-import vn.edu.iuh.fit.Week5.models.Skill;
+package vn.edu.iuh.fit.backend.enums;
 
 public enum SkillLevel {
     MASTER(1),

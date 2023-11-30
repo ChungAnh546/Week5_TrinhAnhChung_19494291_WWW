@@ -1,9 +1,11 @@
-package vn.edu.iuh.fit.Week5.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "job")
@@ -21,4 +23,6 @@ public class Job {
     private String job_name;
     @ManyToOne
     private Company company;
+    @OneToMany(mappedBy = "job")
+    private List<JobSkill> lsJobSkills;
 }

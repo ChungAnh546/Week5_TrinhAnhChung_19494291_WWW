@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.Week5.models;
+package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,5 +19,14 @@ public class Experience {
     private long id;
     @Column(name = "from_date")
     private Date from_date;
-
+    @Column(name = "to_date")
+    private Date to_date;
+    @Column(name = "role",length = 100)
+    private String role;
+    @Column(name = "company",length = 120)
+    private String company;
+    @Column(name = "work_desc",length = 400)
+    private String work_desc;
+    @ManyToOne
+    private Candidate candidate;
 }

@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.Week5.enums;
+package vn.edu.iuh.fit.backend.enums;
 
 public enum SkillType {
     SOFT_SKILL(1),TECHNICAL_SKILL(2),UNSPECIFIC(0);
